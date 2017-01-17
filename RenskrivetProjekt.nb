@@ -1,0 +1,649 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21811,        639]
+NotebookOptionsPosition[     20120,        577]
+NotebookOutlinePosition[     20476,        593]
+CellTagsIndexPosition[     20433,        590]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Envariabel Projektarbete", "Title",
+ CellChangeTimes->{{3.6936293768117313`*^9, 3.693629393616045*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Uppgift1", "Section",
+ CellChangeTimes->{{3.693629429908011*^9, 3.6936294457405157`*^9}}],
+
+Cell["\<\
+Det f\[ODoubleDot]rsta problemet du st\[ODoubleDot]ter p\[ARing] \
+\[ADoubleDot]r att detektorkondensatorns m\[ADoubleDot]rkning \[ADoubleDot]r \
+otydlig och du m\[ARing]ste d\[ADoubleDot]rf\[ODoubleDot]r f\[ODoubleDot]rst \
+best\[ADoubleDot]mma dess kapacitans. N\[ARing]gon har redan p\[ARing] b\
+\[ODoubleDot]rjat detta arbete vilket resulterat i m\[ADoubleDot]tserien som \
+finns i filen matserie.dat . Tabellen i filen visar sp\[ADoubleDot]nningen \
+(V) \[ODoubleDot]ver kondensatorn som funktion av tiden (s) d\[ARing] den \
+urladdas genom en resistor p\[ARing] 20.0 G\[CapitalOmega].\
+\>", "Text",
+ CellChangeTimes->{
+  3.693629489711739*^9, 3.693629522105617*^9, {3.693650076153507*^9, 
+   3.6936501020518217`*^9}}],
+
+Cell[TextData[{
+ StyleBox["(a) Sp\[ADoubleDot]nningen uC  \[ODoubleDot]ver kondensatorn och \
+str\[ODoubleDot]mmen i  genom resistorn vid tiden t .",
+  FontWeight->"Bold"],
+ "\n\n F\[ODoubleDot]r att f\[ARing] fram sp\[ADoubleDot]nningen och str\
+\[ODoubleDot]men vid tiden t, utnytjade vi sambandet at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"i", " ", "+", " ", 
+     FractionBox["u", "R"]}], "=", " ", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " och  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"i", "(", "t", ")"}], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["c", "0"], "*", " ", 
+     RowBox[{"u", "'"}], 
+     RowBox[{"(", "t", ")"}], " "}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "f\[ODoubleDot]r att f\[ARing] diffretioalekvationen ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["c", "0"], "*", " ", 
+      RowBox[{"u", "'"}], 
+      RowBox[{"(", "t", ")"}]}], "+", " ", 
+     RowBox[{"u", 
+      FractionBox["1", 
+       RowBox[{"R", " ", "*", "c"}]]}]}], "=", " ", "0"}], 
+   TraditionalForm]]],
+ ". L\[ODoubleDot]ser man den ser man att sp\[ADoubleDot]nningen i \
+kondensatorn avtar exponentiellt, ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"u", "[", "t", "]"}], "=", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox["t", 
+       RowBox[{"R", "*", " ", "c"}]]}]], " ", 
+    RowBox[{"C", "[", "1", "]"}]}]}]],
+  CellChangeTimes->{3.6936296614340963`*^9}],
+ ". Sedan kan man anv\[ADoubleDot]nda FindFit f\[ODoubleDot]r f\[ARing] fram ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", "1"], "=", " ", "251.707"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". K\[ODoubleDot]r man sedan FindFit en andra g\[ARing]ng med konstanten f\
+\[ARing]r man fram ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["c", "0"], "=", " ", "3.270666888845813`*^-11"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". F\[ODoubleDot]r att f\[ARing] fram i(t) deriverade vi u(t) och stoppade \
+in i formeln, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"i", "(", "t", ")"}], " ", "=", " ", 
+    RowBox[{
+     SubscriptBox["c", "0"], "*", " ", 
+     RowBox[{"u", "'"}], 
+     RowBox[{"(", "t", ")"}], " "}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " och fick ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{"251.707", "*", 
+     SuperscriptBox["\[ExponentialE]", 
+      FractionBox[
+       RowBox[{"-", "t"}], 
+       RowBox[{"R", "*", "C0"}]]]}], "]"}], "*", "C0"}]]],
+ " vilket ger i(t) = ",
+ Cell[BoxData[
+  RowBox[{"8.2308189`*^-9", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "1.529051987767584`"}], " ", "t"}]]}]],
+  CellChangeTimes->{3.6936297193061*^9}],
+ "\n  \n ",
+ StyleBox["(b) Kondensatorns kapacitans C0 .",
+  FontWeight->"Bold"],
+ "\n  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["c", "0"], "=", " ", "3.270666888845813`*^-11"}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", enligt a."
+}], "Text",
+ CellChangeTimes->{
+  3.693629514540278*^9, {3.6936309219493513`*^9, 3.6936309411658163`*^9}, {
+   3.6936310208373127`*^9, 3.693631033579042*^9}, {3.693631067182561*^9, 
+   3.6936316629760733`*^9}, {3.693631697956688*^9, 3.693631891169917*^9}, {
+   3.6936319734424887`*^9, 3.693632008164298*^9}, 3.6936320442408752`*^9, {
+   3.693642710742001*^9, 3.693642742178114*^9}, {3.693642992882461*^9, 
+   3.693643055488227*^9}, {3.6936430944526978`*^9, 3.693643111065386*^9}, {
+   3.693643199604949*^9, 3.693643340806623*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{"20", "*", 
+    SuperscriptBox["10", "9"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"u", "'"}], "[", "t", "]"}], "+", 
+      RowBox[{
+       RowBox[{"u", "[", "t", "]"}], "*", 
+       FractionBox["1", 
+        RowBox[{"R", "*", "c"}]]}]}], "\[Equal]", "0"}], "}"}], ",", " ", 
+   RowBox[{"u", "[", "t", "]"}], ",", " ", "t"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"u", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox["t", 
+        RowBox[{"20000000000", " ", "c"}]]}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.6936296614340963`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/Felix/GitHub/Envariabel-projekt/matserie.dat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "data", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FindFit", "[", 
+  RowBox[{"data", ",", " ", 
+   RowBox[{"a", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", " ", "b"}], " ", "x"}]]}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", " ", "x"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.009166666666666668], 
+     AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxF1UtIlFEUwPFx1HEcJ52nSpgiQmlRVBo9UO6l8EFRMSJBNVAYaW2yFkGP
+XeCucCOELdzopo0QFGlEhBZRaCRSFkk1GZKNifmutJrvnn/zfSDDme/e3zn3
+3HvH4saW+tNOh8NxOfFnff5/Fkujbf3fW/StDuu5rXpqY1dC2eeI+9Ro1/kq
+z82zuqLcegbUVKS3sPX4Gd4/Vx5rwLdmLdor1WQ9W5oYP6La+hdKo82ndLN5
+8UaZeZONzH+nQlbCypN6aNB6xlRRazzSO30C75P4D6KMj6kq64sbx/DHJV/N
+UeZ/kXyHj5BvQtbT2YD3VZlxYw14k8pKV3ivHi+uohZQEMGbUrKMQ3jTKrH6
+eCT/IN6MrKfvAONnpJ71+/F/qAum4DrmzypZVg355qQebzXevMTX9+HNy3jH
+XrwFWV+LxltUA4mw7Vol3pLUd2kP3rKsZ2w33rL088UuvJ/K7P+OnXi/ZHy0
+Au+39Kd1O96KqrcSDG/DW5H31VvxVmX9E5vx/qi6RPt7ajfh/ZX9bt+I59Am
+DpUx3qEl/wZ8hzbnb7REm+nlKdrkSy8hX4o29V8sxnNKvFCE59SmP/3r8Jw4
+BdSTqs15K1yLl0q+PLw06snFS5P8rWG8NC3rC+KlazO8zY+Xzns/nov1+vBc
++qr5wovn0nJesvAyWI8bL0Ob/kdceG5dZgp04bmpLxXPneyLeJl4DrxMbe5z
+fJVz5qEfq0o8j27iXIjnId+yEi9Lm+X0LMk96Mhi/gKeV5vz5pnD82rTjtgs
+njd5b8RbQ3+m8exYvGz6NYWXravkBwgvO3nPxcuh/gm8HPZ/HM/Hfn2We17u
+ox8xfB/7/5H5Pur5QD4f/X6P50/+ronnZ7/e4vnpz2s8P+dtBM9P/mG8AOdn
+GC+gDdf7Ei/AeRnCC7A/g3iB5O+0eEH24xn9CXI/nuIF6e8TvCD9GsAL6m6r
+3K7HeCHqeYRnx+KFqOchXoj89/HsWLxwMhYvTD138cL05w5emHw9eHYsXm4y
+Fi83+X9OPDuWz1zydePZsXh5eJ14diyeHYtnx+LZsXj5+O3qHyLqID8=
+      "]]}, {}}, {}},
+  
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{0, 6.}, {0, 130.555}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.693629584248783*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"a", "\[Rule]", "251.70653701301623`"}], ",", 
+   RowBox[{"b", "\[Rule]", "1.5287402141260464`"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.693629584257924*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindFit", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"251.70653701301623", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"t", " "}], 
+       RowBox[{"20000000000", " ", "c"}]]}]]}], " ", ",", " ", "c", ",", 
+   "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.693629611555434*^9, 3.693629620499042*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"c", "\[Rule]", "3.270666888845813`*^-11"}], "}"}]], "Output",
+ CellChangeTimes->{{3.693629613505917*^9, 3.693629622508336*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", 
+   RowBox[{"20", "*", 
+    SuperscriptBox["10", "9"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"C0", "=", 
+    RowBox[{"3.27", "*", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "11"}]]}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"D", "[", 
+   RowBox[{"251.707", "*", 
+    SuperscriptBox["\[ExponentialE]", 
+     FractionBox[
+      RowBox[{"-", "t"}], 
+      RowBox[{"R", "*", "C0"}]]]}], "]"}], "*", "C0"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"8.2308189`*^-9", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "1.529051987767584`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.6936297193061*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["(c) Den tid t1  det tar innan kondensatorns laddning minskat till \
+h\[ADoubleDot]lften.",
+  FontWeight->"Bold"],
+ "\nEftersom i(t) = q\[CloseCurlyQuote](t), s\[ARing] kan man integrera i(t) \
+f\[ODoubleDot]r at f\[ARing] ut q(t). Kondensatorn n\[ADoubleDot]r den \
+\[ADoubleDot]r fullt laddad kommer d\[ARing] att inneh\[ARing]lla q(0) \
+Colomb. Detta g\[ODoubleDot]r att, om man l\[ODoubleDot]ser ekvationen \
+(q(0))/2 = q(t) med avsende p\[ARing] t kommer man att f\[ARing] tiden det \
+tar f\[ODoubleDot]r kondensatorn att bli av med halva sin laddning. Detta ger \
+att tiden blir \[TildeTilde]0.45 s."
+}], "Text",
+ CellChangeTimes->{{3.693643367672987*^9, 3.693643414168092*^9}, {
+  3.693650064321226*^9, 3.6936500691612873`*^9}, {3.693651958621149*^9, 
+  3.6936520385246*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"i", "[", "t_", "]"}], "=", 
+   RowBox[{"8.2308189*^-9", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "1.529051987767584"}], "t"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q", "[", "t_", "]"}], "=", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{"i", "[", "t", "]"}], ",", "t"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"q", "[", "0", "]"}], "/", "2"}], "\[Equal]", 
+    RowBox[{"q", "[", "t", "]"}]}], ",", "t"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.693651822807324*^9, 3.693651875558066*^9}, {
+  3.693651937879973*^9, 3.693651938329728*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "5.3829555606`*^-9"}], " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "1.529051987767584`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.693652078241066*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6936520782884407`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"t", "\[Rule]", "0.45331825608620424`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.693652078297423*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["(d) Effektutvecklingen i resistorn vid tiden t.\n",
+  FontWeight->"Bold"],
+ "P (t) = U(t) * I(t)"
+}], "Text",
+ CellChangeTimes->{{3.6936434341074343`*^9, 3.69364344084791*^9}, {
+  3.693643671875328*^9, 3.693643689573778*^9}, {3.693644086075313*^9, 
+  3.693644095738488*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", "3.270666888845813*^-11"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"i", "[", "t_", "]"}], "=", 
+   RowBox[{"8.2308189*^-9", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "1.529051987767584"}], "t"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "[", "t_", "]"}], "=", 
+   RowBox[{"251.70653701301623`", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"t", " "}], 
+       RowBox[{"20000000000", " ", "c"}]]}]]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "[", "t", "]"}], "*", 
+  RowBox[{"i", "[", "t", "]"}]}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"2.0717509221002835`*^-6", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "3.057792201896958`"}], " ", "t"}]]}]], "Output",
+ CellChangeTimes->{3.6936439509567823`*^9}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["(e) V\[ADoubleDot]rmeenergin som utvecklats i \
+resistorn under tiden t1  s och totala v\[ADoubleDot]rmeenergin som \
+utvecklats\nd\[ARing] kondensatorn urladdats helt. Anv\[ADoubleDot]nd \
+resultatet i (d).",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.693646813079216*^9, 3.6936468179232483`*^9}}],
+
+Cell[TextData[{
+ "F\[ODoubleDot]r att l\[ODoubleDot]sa uppgiften utnytjade vi sambandet att \
+Energin = Effekten * tiden. Effekten fick vi fr\[ARing]n f\[ODoubleDot]rra \
+uppgiften, d\[ARing] fick vi funktionen Energin(t) = ",
+ Cell[BoxData[
+  RowBox[{"2.0717509221002835`*^-6", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "3.057792201896958`"}], " ", "t"}]], " ", "t"}]],
+  CellChangeTimes->{3.693646836086525*^9, 3.6936471644473867`*^9}],
+ ". F\[ODoubleDot]r att sedan r\[ADoubleDot]kna ut hur totala \
+m\[ADoubleDot]ngden v\[ADoubleDot]rmeenergi l\[ODoubleDot]ste vi den \
+genelariserade integralen: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Limit", "[", 
+     RowBox[{
+      RowBox[{
+       SubsuperscriptBox["\[Integral]", "0", "R"], 
+       RowBox[{"2.0717509221002835`*^-6", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "3.057792201896958`"}], " ", "t"}]], " ", "t", 
+        RowBox[{"\[DifferentialD]", "t"}]}]}], ",", 
+      RowBox[{"R", "\[Rule]", "\[Infinity]"}]}], "]"}], " ", "\[Rule]", "  ", 
+    
+    RowBox[{"2.21575", "\[Times]", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "7"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "Joule.   "
+}], "Text",
+ CellChangeTimes->{{3.6936470011626062`*^9, 3.6936470106415367`*^9}, {
+  3.693647046806759*^9, 3.693647299207633*^9}, {3.693647354293708*^9, 
+  3.693647354293742*^9}, {3.693647503220469*^9, 3.693647503220495*^9}, {
+  3.693647550724682*^9, 3.693647665570491*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", "3.270666888845813*^-11"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"i", "[", "t_", "]"}], "=", 
+   RowBox[{"8.2308189*^-9", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "1.529051987767584"}], "t"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "[", "t_", "]"}], "=", 
+   RowBox[{"251.70653701301623`", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"t", " "}], 
+       RowBox[{"20000000000", " ", "c"}]]}]]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "t_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"u", "[", "t", "]"}], "*", 
+    RowBox[{"i", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"En", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"p", "[", "t", "]"}], "*", "t"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"p", "[", "t", "]"}], ",", 
+   RowBox[{"t", "\[Rule]", "Infinity"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"En", "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "R"}], "}"}]}], "]"}], ",", " ", 
+   RowBox[{"R", "\[Rule]", "Infinity"}]}], "]"}]}], "Input",
+ CellChangeTimes->{3.693647116432426*^9}],
+
+Cell[BoxData[
+ RowBox[{"2.0717509221002835`*^-6", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "3.057792201896958`"}], " ", "t"}]], " ", "t"}]], "Output",
+ CellChangeTimes->{3.693646836086525*^9, 3.6936471644473867`*^9}],
+
+Cell[BoxData["0.`"], "Output",
+ CellChangeTimes->{3.693646836086525*^9, 3.693647164453224*^9}],
+
+Cell[BoxData["2.2157543126768806`*^-7"], "Output",
+ CellChangeTimes->{3.693646836086525*^9, 3.69364716447684*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Uppgift 2", "Section",
+ CellChangeTimes->{{3.6936498701205463`*^9, 3.69364987968749*^9}}],
+
+Cell[TextData[{
+ "Sp\[ADoubleDot]nningsk\[ADoubleDot]llan du ska anv\[ADoubleDot]nda till \
+larmet l\[ADoubleDot]mnar en konstant liksp\[ADoubleDot]nning p\[ARing] 250 \
+V. Amperemetern har en utg\[ARing]ng som kan kopplas till en sir\[EAcute]n \
+och denna utg\[ARing]ng aktiveras om str\[ODoubleDot]mmen \[ADoubleDot]r \
+\[ODoubleDot]ver 1.00 A under minst 250 s. Tjuvlarmet ska konstrueras s\
+\[ARing] att det l\[ODoubleDot]ser ut om kapacitansen f\[ODoubleDot]r\
+\[ADoubleDot]ndras med mer \[ADoubleDot]n 10 %. Tiden det tar f\[ODoubleDot]r \
+kapacitansen att f\[ODoubleDot]r\[ADoubleDot]ndras.\n\n",
+ StyleBox["(a) F\[ODoubleDot]rklara hur seriekretsen kan fungera som ett \
+tjuvlarm.\n",
+  FontWeight->"Bold"],
+ "N\[ADoubleDot]r handen n\[ADoubleDot]rmar sig kondensatorn kommer dennes \
+kapacitans att \[ODoubleDot]ka vilket g\[ODoubleDot]r att kondensatorn laddas \
+upp till sin nya maxladdning, detta i sin tur g\[ODoubleDot]r att en h\
+\[ODoubleDot]gre str\[ODoubleDot]m kommer att f\[ADoubleDot]rdas i kretsen \
+och leder till att ampermetern s\[ADoubleDot]tter ig\[ARing]ng \
+h\[ODoubleDot]gtalaren.\n\n",
+ StyleBox["(b) Best\[ADoubleDot]m de v\[ADoubleDot]rden p\[ARing] \
+serieresistansen som uppfyller specifikationerna ovan.",
+  FontWeight->"Bold"],
+ "\nTips:  Mathematica-funktionerna DSolve  och Solve  kan \
+anv\[ADoubleDot]ndas h\[ADoubleDot]r."
+}], "Text",
+ CellChangeTimes->{{3.693649899744331*^9, 3.693649983431933*^9}, {
+  3.693650229283168*^9, 3.693650260243167*^9}, {3.693650298956626*^9, 
+  3.693650310546949*^9}, {3.693650341584062*^9, 3.6936503489591093`*^9}, {
+  3.6936504505258904`*^9, 3.6936504729865713`*^9}, {3.693650668105897*^9, 
+  3.69365066887282*^9}, {3.693650807376883*^9, 3.693650815576096*^9}, {
+  3.693650988704838*^9, 3.6936510843486977`*^9}, {3.693651147177163*^9, 
+  3.693651171800403*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 864},
+WindowMargins->{{Automatic, 351}, {Automatic, 45}},
+FrontEndVersion->"10.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 23, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 109, 1, 92, "Title"],
+Cell[CellGroupData[{
+Cell[714, 27, 95, 1, 64, "Section"],
+Cell[812, 30, 733, 12, 87, "Text"],
+Cell[1548, 44, 3601, 107, 266, "Text"],
+Cell[CellGroupData[{
+Cell[5174, 155, 505, 16, 70, "Input"],
+Cell[5682, 173, 361, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6080, 189, 604, 16, 86, "Input"],
+Cell[6687, 207, 1958, 44, 242, "Output"],
+Cell[8648, 253, 211, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8896, 263, 374, 10, 45, "Input"],
+Cell[9273, 275, 167, 3, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9477, 283, 630, 19, 134, "Input"],
+Cell[10110, 304, 202, 5, 32, "Output"]
+}, Open  ]],
+Cell[10327, 312, 808, 14, 87, "Text"],
+Cell[CellGroupData[{
+Cell[11160, 330, 799, 23, 82, "Input"],
+Cell[11962, 355, 225, 6, 32, "Output"],
+Cell[12190, 363, 533, 11, 41, "Message"],
+Cell[12726, 376, 164, 4, 28, "Output"]
+}, Open  ]],
+Cell[12905, 383, 301, 7, 49, "Text"],
+Cell[CellGroupData[{
+Cell[13231, 394, 805, 25, 110, "Input"],
+Cell[14039, 421, 215, 5, 32, "Output"]
+}, Open  ]],
+Cell[14269, 429, 332, 5, 49, "Text"],
+Cell[14604, 436, 1534, 36, 97, "Text"],
+Cell[CellGroupData[{
+Cell[16163, 476, 1484, 45, 161, "Input"],
+Cell[17650, 523, 247, 5, 32, "Output"],
+Cell[17900, 530, 94, 1, 28, "Output"],
+Cell[17997, 533, 113, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18159, 540, 95, 1, 64, "Section"],
+Cell[18257, 543, 1835, 30, 239, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
