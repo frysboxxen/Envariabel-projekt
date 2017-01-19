@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39733,       1068]
-NotebookOptionsPosition[     37259,        981]
-NotebookOutlinePosition[     37705,        999]
-CellTagsIndexPosition[     37662,        996]
+NotebookDataLength[     43975,       1204]
+NotebookOptionsPosition[     41227,       1108]
+NotebookOutlinePosition[     41673,       1126]
+CellTagsIndexPosition[     41630,       1123]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -972,10 +972,137 @@ kan man m\[ADoubleDot]ta med ovanst\[ARing]ende utrustning?",
   FontWeight->"Bold"],
  "\n",
  StyleBox["Tips: FindMaximum  och FindRoot  kan man ha nytta av \
-h\[ADoubleDot]r.",
-  FontSlant->"Italic"]
+h\[ADoubleDot]r.\n\n",
+  FontSlant->"Italic"],
+ "Svar: 8.37592% stora f\[ODoubleDot]r\[ADoubleDot]ndringar."
 }], "Text",
- CellChangeTimes->{{3.6937340317095957`*^9, 3.693734042201365*^9}}]
+ CellChangeTimes->{{3.6937340317095957`*^9, 3.693734042201365*^9}, {
+   3.693828204139718*^9, 3.693828240209137*^9}, {3.693828576898324*^9, 
+   3.6938286295784807`*^9}, 3.69382872186714*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"q", "[", "t_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"250.`", " ", "c"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"8.176667222114532`*^-9", "-", 
+       RowBox[{"250.`", " ", "c"}]}], ")"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox["t", 
+        RowBox[{"c", " ", "R"}]]}]]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["c", "0"], "=", "3.270666888845813*^-11"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"6.765", "*", 
+    SuperscriptBox["10", "6"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"250", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "6"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"P", "*", 
+      RowBox[{"q", "[", "0", "]"}], "*", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"-", "t"}], 
+        RowBox[{"r", "*", 
+         SubscriptBox["c", "0"]}]]]}], 
+     RowBox[{"r", "*", 
+      SubscriptBox["c", "0"]}]], "\[Equal]", 
+    RowBox[{"1", "*", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "6"}]]}]}], ",", "P"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"P", "\[Rule]", "0.08375919169460513`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.693828197847371*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["(b) Vilken sp\[ADoubleDot]nning kr\[ADoubleDot]vs om larmet ska \
+kunna detektera kapacitansf\[ODoubleDot]r\[ADoubleDot]ndringar ner till 5% ?\n\
+",
+  FontWeight->"Bold"],
+ "Svar: Sp\[ADoubleDot]nningen som kr\[ADoubleDot]vs f\[ODoubleDot]r att man \
+ska kunna detektera kapacitansf\[ODoubleDot]r\[ADoubleDot]ndringar ner till \
+5% \[ADoubleDot]r 377.91V"
+}], "Text",
+ CellChangeTimes->{{3.693828686101117*^9, 3.6938286908642473`*^9}, {
+  3.693830562687088*^9, 3.693830565462102*^9}, {3.6938306272219667`*^9, 
+  3.693830630414065*^9}, {3.693830689643958*^9, 3.6938307750444117`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   SubscriptBox["c", "0"], "=", "3.270666888845813*^-11"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{
+    SubscriptBox["c", "0"], "*", "1.1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"q", "[", "t_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"250.`", " ", "c"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"8.176667222114532`*^-9", "-", 
+       RowBox[{"250.`", " ", "c"}]}], ")"}], " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox["t", 
+        RowBox[{"c", "*", " ", "r"}]]}]]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"6.765", "*", 
+    SuperscriptBox["10", "6"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"250", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "6"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "=", "0.05"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"p", "*", "u", "*", 
+      SuperscriptBox["\[ExponentialE]", 
+       FractionBox[
+        RowBox[{"-", "t"}], 
+        RowBox[{"r", "*", "c"}]]]}], "r"], "\[Equal]", 
+    RowBox[{"1", "*", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "6"}]]}]}], ",", "u"}], "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"u", "\[Rule]", "377.91398627634385`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.693830558199807*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1051,7 +1178,7 @@ Cell[22931, 649, 416, 12, 47, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[23384, 666, 1345, 36, 165, "Input"],
-Cell[24732, 704, 431, 10, 56, "Output"],
+Cell[24732, 704, 431, 10, 90, "Output"],
 Cell[25166, 716, 401, 8, 53, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -1067,7 +1194,16 @@ Cell[35915, 946, 717, 12, 106, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[36669, 963, 94, 1, 64, "Section"],
-Cell[36766, 966, 465, 11, 87, "Text"]
+Cell[36766, 966, 655, 14, 125, "Text"],
+Cell[CellGroupData[{
+Cell[37446, 984, 1337, 43, 178, "Input"],
+Cell[38786, 1029, 164, 4, 32, "Output"]
+}, Open  ]],
+Cell[38965, 1036, 610, 11, 49, "Text"],
+Cell[CellGroupData[{
+Cell[39600, 1051, 1421, 46, 213, "Input"],
+Cell[41024, 1099, 163, 4, 32, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
